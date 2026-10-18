@@ -1,28 +1,67 @@
-# Nexus-Dashboard
+# Nexus-Dashboard ☁️
 
-Dashboard web interativo de produtividade e clima, desenvolvido como projeto acadêmico para a disciplina **Programação Client-side**. O projeto executa a lógica no navegador, utilizando HTML5, CSS3 e JavaScript moderno.
+**Um dashboard de produtividade e clima que reúne organização pessoal e informações meteorológicas em uma interface moderna, intuitiva e responsiva.**
 
-## Objetivos
+O Nexus-Dashboard é um projeto acadêmico desenvolvido para a disciplina de **Programação Client-side**, com o objetivo de aplicar conhecimentos de desenvolvimento web na criação de uma aplicação interativa que funciona diretamente no navegador.
 
-- Criar uma estrutura de página semântica, acessível e organizada.
-- Reservar áreas de integração para os componentes desenvolvidos em paralelo pelo grupo.
-- Consultar as condições meteorológicas atuais de uma cidade por meio de uma API pública.
-- Facilitar o desenvolvimento colaborativo com Git e GitHub.
+## 📌 Sobre o projeto
 
-## Tecnologias
+O projeto reúne ferramentas para ajudar o usuário a organizar suas atividades diárias, acompanhar o andamento das tarefas, registrar anotações e consultar as condições meteorológicas de diferentes cidades.
 
-- **HTML5:** estrutura semântica com `header`, `nav`, `main`, `section` e `footer`.
-- **CSS3:** variáveis CSS, Grid, Flexbox e layout responsivo.
-- **JavaScript ES6+:** módulos organizados por responsabilidade, eventos, `fetch`, `async/await` e `try/catch`.
-- **Open-Meteo:** geocodificação de cidades e dados meteorológicos atuais; não exige chave de API para uso gratuito não comercial.
-- **Git/GitHub:** versionamento e integração do trabalho em equipe.
+A aplicação utiliza tecnologias web para atualizar os elementos da interface dinamicamente, armazenar informações localmente e consumir dados de uma API pública.
 
-## Estrutura de pastas
+## ✨ Funcionalidades
+
+### ✅ Gerenciamento de tarefas
+- Adicionar e excluir tarefas.
+- Marcar tarefas como concluídas.
+- Definir prioridades: baixa, média ou alta.
+- Organizar tarefas por categoria.
+- Informar prazos para as atividades.
+- Filtrar tarefas por situação: todas, pendentes ou concluídas.
+- Remover todas as tarefas concluídas.
+- Acompanhar indicadores de produtividade e progresso.
+
+### 🌦️ Consulta do clima
+- Pesquisar cidades pelo nome.
+- Consultar a temperatura atual.
+- Visualizar a sensação térmica.
+- Consultar a umidade do ar.
+- Verificar a velocidade do vento.
+- Exibir informações meteorológicas atualizadas por meio de uma API pública.
+
+### 📝 Anotações rápidas
+- Registrar lembretes e ideias.
+- Salvar anotações automaticamente no navegador.
+
+### 🎨 Interface e experiência do usuário
+- Design moderno e organizado.
+- Alternância entre tema claro e escuro.
+- Layout responsivo para diferentes tamanhos de tela.
+- Indicadores visuais para facilitar a leitura das informações.
+- Navegação e elementos preparados para melhorar a acessibilidade.
+
+### 💾 Armazenamento local
+As tarefas, as anotações e a preferência de tema são armazenadas no navegador utilizando `localStorage`, permitindo recuperar essas informações ao atualizar ou reabrir a aplicação no mesmo navegador.
+
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia | Aplicação no projeto |
+|---|---|
+| HTML5 | Estrutura e organização dos elementos da página |
+| CSS3 | Estilização, responsividade e temas visuais |
+| JavaScript ES6+ | Interatividade, eventos e manipulação do DOM |
+| Fetch API | Comunicação com serviços externos |
+| Open-Meteo API | Consulta de localização e condições meteorológicas |
+| LocalStorage | Armazenamento local de tarefas, anotações e preferências |
+| Git e GitHub | Versionamento e compartilhamento do código |
+
+## 📂 Estrutura do projeto
 
 ```text
 Nexus-Dashboard/
 ├── assets/
-│   └── # Imagens, ícones e outros recursos estáticos
+│   └── Recursos estáticos
 ├── css/
 │   └── style.css
 ├── js/
@@ -33,105 +72,94 @@ Nexus-Dashboard/
 └── README.md
 ```
 
-## Como executar
+- **`index.html`**: estrutura principal da aplicação.
+- **`css/style.css`**: estilos, layout responsivo e temas.
+- **`js/main.js`**: funcionalidades das tarefas, anotações, indicadores e tema.
+- **`js/weather.js`**: integração com a API meteorológica.
+- **`README.md`**: documentação do projeto.
 
-1. Baixe ou clone o repositório.
-2. Abra a pasta do projeto no editor de código.
-3. Inicie um servidor local estático, por exemplo, com a extensão **Live Server** no Visual Studio Code.
-4. Abra `index.html` pelo endereço local fornecido pelo servidor.
-5. No cartão **Clima**, informe uma cidade e selecione **Buscar**.
+## 🚀 Como executar o projeto
 
-É recomendado usar um servidor local em vez de abrir o HTML diretamente com `file://`. A aplicação precisa de conexão com a internet para acessar as APIs públicas.
+### Pré-requisitos
 
-### Clonar com Git
+- Um navegador atualizado, como Google Chrome, Microsoft Edge ou Firefox.
+- Visual Studio Code ou outro editor de código.
+- Extensão Live Server ou outro servidor HTTP local.
+- Conexão com a internet para consultar os dados meteorológicos.
+
+### Executando localmente
+
+1. Baixe ou clone este repositório.
+2. Abra a pasta do projeto no Visual Studio Code.
+3. Instale a extensão **Live Server**, caso ainda não esteja instalada.
+4. Abra o arquivo `index.html`.
+5. Clique em **Go Live** para iniciar o servidor local.
+6. Acesse o endereço disponibilizado no navegador.
+
+Após abrir a aplicação, você poderá adicionar tarefas, alterar prioridades, registrar anotações e pesquisar as condições do clima de uma cidade.
+
+### Clonando o repositório
 
 ```bash
 git clone URL_DO_REPOSITORIO
 cd Nexus-Dashboard
 ```
 
-Substitua `URL_DO_REPOSITORIO` pelo endereço real do repositório criado pelo grupo.
+Substitua `URL_DO_REPOSITORIO` pelo endereço real do seu repositório no GitHub.
 
-## Integração de clima
+## 🌐 API meteorológica
 
-O arquivo `js/weather.js` executa duas etapas:
+O projeto utiliza a [Open-Meteo](https://open-meteo.com/) para consultar informações meteorológicas.
 
-1. Consulta a API de geocodificação para transformar o nome da cidade em latitude e longitude.
-2. Consulta a API de previsão para recuperar temperatura, sensação térmica, umidade, velocidade do vento e código da condição meteorológica.
+A integração realiza duas etapas:
 
-As requisições usam `fetch`, `async/await`, validação de resposta HTTP e `try/catch`. Mensagens de carregamento e erro são apresentadas na interface. Os dados são atualizados no DOM sem recarregar a página.
+1. Pesquisa a cidade e obtém suas coordenadas geográficas.
+2. Utiliza as coordenadas para consultar as condições meteorológicas atuais.
 
-A aplicação usa os seguintes serviços:
+A comunicação é feita com `fetch`, utilizando operações assíncronas e tratamento de erros para lidar com falhas de conexão ou resultados inválidos.
 
-- Geocodificação: `https://geocoding-api.open-meteo.com/v1/search`
-- Condições atuais: `https://api.open-meteo.com/v1/forecast`
+Documentação oficial:
+- [Open-Meteo — Previsão do tempo](https://open-meteo.com/en/docs)
+- [Open-Meteo — Geocodificação](https://open-meteo.com/en/docs/geocoding-api)
 
-Documentação: [Open-Meteo](https://open-meteo.com/en/docs) e [API de Geocoding](https://open-meteo.com/en/docs/geocoding-api).
+A consulta depende de conexão com a internet e da disponibilidade da API.
 
-**Atribuição:** os dados meteorológicos são fornecidos por [Open-Meteo](https://open-meteo.com/). Consulte os termos e a licença de dados do serviço antes de distribuir ou ampliar o uso.
+## 🔒 Armazenamento e privacidade
 
-## Contratos de integração entre os integrantes
+As tarefas, as anotações e a preferência de tema são armazenadas localmente no navegador por meio do `localStorage`.
 
-### Estrutura HTML e estilos
+O projeto não utiliza, em sua implementação atual, um banco de dados remoto para sincronizar esses dados entre dispositivos. Limpar os dados do navegador pode apagar as informações armazenadas localmente.
 
-O arquivo `index.html` define os pontos de integração e carrega `css/style.css`, `js/weather.js` e `js/main.js`. O responsável por UI/UX pode alterar os estilos mantendo os IDs necessários ao JavaScript.
+## 🎯 Objetivos de aprendizagem
 
-### To-Do List
+O desenvolvimento do Nexus-Dashboard permite praticar conceitos importantes de desenvolvimento front-end, como:
 
-Os elementos reservados para a lista de tarefas são:
+- Estruturação semântica com HTML5.
+- Criação de interfaces responsivas com CSS3.
+- Manipulação dinâmica do DOM com JavaScript.
+- Gerenciamento de eventos e formulários.
+- Persistência de dados com `localStorage`.
+- Consumo de APIs públicas com `fetch`.
+- Tratamento de operações assíncronas e erros.
+- Organização de arquivos e versionamento com Git e GitHub.
 
-- `#task-form`: formulário de criação.
-- `#task-input`: campo para digitar uma tarefa.
-- `#task-list`: lista de tarefas.
-- `#task-count`: indicador de quantidade.
-- `#task-empty-state`: mensagem exibida quando não há tarefas.
+## 🔮 Possíveis melhorias futuras
 
-O responsável pela To-Do List deve implementar criação, conclusão, exclusão e persistência via `localStorage`. Após atualizar a lista, pode emitir o evento para sincronizar os indicadores:
+- Implementar sincronização de tarefas entre dispositivos.
+- Adicionar autenticação de usuários.
+- Criar relatórios mais detalhados de produtividade.
+- Implementar notificações de prazos.
+- Ampliar as opções de personalização do painel.
 
-```javascript
-document.dispatchEvent(new CustomEvent("tasks:updated", {
-  detail: { count: document.querySelectorAll("#task-list > li").length }
-}));
-```
+## 👨‍💻 Contexto acadêmico
 
-Evite substituir `innerHTML` com conteúdo digitado pelo usuário. Prefira `document.createElement()` e `textContent`.
+**Projeto:** Dashboard Interativo de Produtividade e Clima  
+**Área:** Desenvolvimento Web  
+**Disciplina:** Programação Client-side  
+**Instituição:** SENAI — CEET Sebastião Camargo
 
-## Fluxo Git sugerido
+Desenvolvido com o objetivo de aplicar, na prática, os fundamentos de HTML5, CSS3 e JavaScript em uma aplicação web interativa.
 
-1. Manter `main` como branch estável.
-2. Criar branches de trabalho, por exemplo `feat/html-base`, `feat/weather-api` e `feat/todo-list`.
-3. Fazer commits pequenos e descritivos.
-4. Abrir Pull Requests para revisão e integração.
-5. Testar o conjunto integrado antes de mesclar na `main`.
+---
 
-Exemplos:
-
-```bash
-git switch -c feat/weather-api
-git add index.html js/weather.js
-git commit -m "feat: integra consulta de clima"
-git push -u origin feat/weather-api
-```
-
-## Checklist de validação
-
-- [ ] O dashboard abre por servidor local.
-- [ ] Uma cidade válida retorna as condições atuais.
-- [ ] Uma cidade inexistente mostra uma mensagem compreensível.
-- [ ] Falha de rede não quebra a página.
-- [ ] A navegação pode ser usada pelo teclado.
-- [ ] A interface funciona em telas estreitas e largas.
-- [ ] A To-Do List integrada salva e recupera tarefas pelo `localStorage`.
-- [ ] O repositório contém instruções atualizadas.
-
-## Limitações conhecidas
-
-- O clima depende de conexão com a internet e da disponibilidade do serviço Open-Meteo.
-- A busca retorna o primeiro resultado de geocodificação para o nome informado; cidades homônimas podem exigir que o usuário informe mais detalhes.
-- A lógica de tarefas completa é responsabilidade do integrante designado e ainda deve ser integrada.
-
-## Contexto acadêmico
-
-Projeto: **Dashboard Interativo de Produtividade e Clima**  
-Disciplina: **Programação Client-side**  
-Tecnologias principais: HTML5, CSS3 e JavaScript ES6+.
+**Nexus-Dashboard** — Organização, produtividade e informação em um só lugar.
